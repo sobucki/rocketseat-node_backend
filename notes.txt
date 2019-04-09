@@ -1,0 +1,16 @@
+1- Iniciar projeto
+yarn init -y
+
+2-Instalar express
+yarn add express
+
+3-Criar pasta src
+4-arquivo server.js
+5-separar as rotas no routes.js
+
+6-Adicionar nodemon para não precisar restartar toda vez o servidor
+yarn add nodemon -D
+-D significa que é dependencia de desenvolvimento, quando for feito o build será descartado
+
+
+
