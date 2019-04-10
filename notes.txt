@@ -12,5 +12,90 @@ yarn add express
 yarn add nodemon -D
 -D significa que é dependencia de desenvolvimento, quando for feito o build será descartado
 
+***Foi necessário adicionar o caminho do system32 no PATH do sistema, porque o nodemon não estava funcionando
 
+*Criando Cluster do MongoDB no Atlas
+->Criar com configurações normais
+->Adiciona um usuário em Security->Add new user
+->Ir em IP whitelist e selecionar any IP
+
+->Volta para Overview e clica em "connect" e escolhe a opção "Connect your application"
+->Seleciono o driver para Nodejs
+->Apos copio a url para conexão com o banco
+
+-----
+Instalação do Mongoose
+>yarn add mongoose
+
+->importa o mongoose no server.js
+->abre a conexão com o banco com a url fornecida
+->passa como parametro useNewUrlParser porque esta sendo utilizado um novo formato de url de conexão
+
+
+-------------------
+
+Criação de modulos
+Schema
+->Cria arquivo Box.js na pasta "models"
+->Cria o arquivo File.js
+
+Criacao de controllers
+->Cria o BoxController.js
+
+--> Altera o routes.js para apontar para o controller criado
+
+----
+Utilizando o Insomnia
+-> Cria uma nova workspace para o projeto
+->Uma nova pasta para separa por funcionalidades
+->Cria uma nova requisicao
+-> Store POST
+
+***Para teste faço uma chama "No Body"
+***Retorno esperado é a criacao do registro no MongoDB Atlas
+
+Insomnia***
+    Para criar uma variavel de ambiente
+    Clico em "No environment" e seleciono "Manage environment"
+    No "Base environment" crio a variavel "base_url": "http://localhost:3333"
+
+Altero o tipo da requisicao de "no body" para JSON
+Passo o valor :
+{
+	"title": "Box do Rafael"
+}
+
+Antes disso o controller precisa ser alterado para passar a variavel title na requisicao;
+Podendo ser acessado pelo req.body.title
+
+
+
+---------------
+UPLOAD DE ARQUIVOS
+
+Instalar a lib multer
+yarn add multer
+----
+
+Criar arquivo multer.js na pasta config
+Importa o FileController no routes.js
+
+***Para chamar no Insomnia o File:
+Criado uma pasta para esta funcionalidade
+Adicionado uma nova requisicao do tipo POST
+O tipo do Body é "Multipart"
+Name "file" e selecionado um arquivo
+
+Resultado esperado:
+Upload para a pasta tmp
+    { fieldname: 'file',
+    originalname: 'DSCN0026.JPG',
+    encoding: '7bit',
+    mimetype: 'image/jpeg',
+    key: '96211426350ea06f4905d44f2a97c7b2-DSCN0026.JPG',
+    destination: 'E:\\HTML\\Node\\backend\\tmp',
+    filename: '96211426350ea06f4905d44f2a97c7b2-DSCN0026.JPG',
+    path:
+    'E:\\HTML\\Node\\backend\\tmp\\96211426350ea06f4905d44f2a97c7b2-DSCN0026.JPG',
+    size: 3548881 }
 
