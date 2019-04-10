@@ -99,3 +99,12 @@ Upload para a pasta tmp
     'E:\\HTML\\Node\\backend\\tmp\\96211426350ea06f4905d44f2a97c7b2-DSCN0026.JPG',
     size: 3548881 }
 
+------------
+SALVAMENTO DO ARQUIVO NO BANCO DE DADOS
+
+Alterado a rota do File para receber o ID da Box '/boxes/:id/files'
+No Insomnia é alterado o POST Store do 'File' para receber o /boxes/:id/files
+Resultado esperado é o salvamento normal do File no banco
+
+Para visualizar a relacao criada entre o Box e o File é criado a requisicao Show no Box no Insomnia
+Esta requisao GET recebe /boxes/:id sem nenhum body
