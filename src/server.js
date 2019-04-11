@@ -46,5 +46,5 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')))
 app.use(require('./routes'));
 
 
-console.log('tes31te');
-app.listen(3333);
+//busca das variaveis de ambiente do nodejs a porta
+app.listen(process.env.PORT || 3333);

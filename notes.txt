@@ -134,5 +134,9 @@ yarn add cors
 
 **Criar arquivo .gitignore
 
+git add . (para adicionar todos arquivos)
+git commit -m "Comentario"
+git push origin master
+
 -----
 Criar arquivo 'Procfile' que será utilizado pelo Heroku para iniciar a aplicacao
