@@ -120,4 +120,19 @@ yarn add socket.io
 
 ----
 Publicaçao da aplicação
+CORS permite quem pode acessar o backend da aplicação, senão o frontend não iria conseguir acessar estando em um dominio diferente
 yarn add cors
+
+->Criacao de conta Heroku
+->Create new app
+->Vincular com github
+
+***Criar repositorio no github
+***Inicar projeto com git
+****git init
+****git remote add origin <url_do_github>
+
+**Criar arquivo .gitignore
+
+-----
+Criar arquivo 'Procfile' que será utilizado pelo Heroku para iniciar a aplicacao
