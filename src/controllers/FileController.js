@@ -18,6 +18,9 @@ class FileController {
         //chama o save do Box
         await box.save();
 
+        //Emite uma mensagem para todos usuarios conectados no socket aberto com o ID da Box relacionada
+        req.io.sockets.in(box._id).emit('file', file);
+
         return res.json(file);
     }
 }

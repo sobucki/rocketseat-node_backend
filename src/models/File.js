@@ -11,7 +11,16 @@ const File = new mongoose.Schema({
         required: true,
     }
 }, {
-    timestamps: true //ira gravar as datas de edicao e criacao dos registros
+        //ira gravar as datas de edicao e criacao dos registros
+        timestamps: true,
+        //toObject e toJSON incia se ira chamar as variais virtuais no parseamento
+        toObject: { virtuals: true },
+        toJSON: { virtuals: true }
+
+    });
+//Funcao que monta o caminho acessivel para o front atraves de uma variavel virtual
+File.virtual('url').get(function () {
+    return `http://localhost:3333/files/${encodeURIComponent(this.path)}`
 });
 
 //exportacao do model

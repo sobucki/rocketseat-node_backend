@@ -108,3 +108,16 @@ Resultado esperado é o salvamento normal do File no banco
 
 Para visualizar a relacao criada entre o Box e o File é criado a requisicao Show no Box no Insomnia
 Esta requisao GET recebe /boxes/:id sem nenhum body
+
+
+----
+Adição da url no Box retornado para poder baixar o arquivo no front
+---
+Alteração para que o aplicativo avise quando um arquivo foi Adicionado
+Instalndo o Socket.IO
+
+yarn add socket.io
+
+----
+Publicaçao da aplicação
+yarn add cors
